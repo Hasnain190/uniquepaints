@@ -3,10 +3,12 @@ import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Map from "@/components/Map";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-blue ">
+      <Navbar />
       <Hero />
       <Gallery />
       <CTA />

@@ -69,9 +69,15 @@ export default function Hero() {
   const SliderItem = ({
     item,
   }: {
-    item: { id: string; heading: string; p: string; img: string; dotThree: string };
+    item: {
+      id: string;
+      heading: string;
+      p: string;
+      img: string;
+      dotThree: string;
+    };
   }) => (
-    <div className="hero-slider p-4 px-6 min-w-screen ">
+    <div className="hero-slider p-4 px-6 w-dvw mt-16">
       <div className="flex gap-2 px-14 ">
         <div className="text py-3 mx-2 ">
           <h1 className="text-4xl py-6 font-bold">
@@ -108,7 +114,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="bg-[#0c1c36] font-manrope">
+    <section className="bg-blue  font-manrope container mx-auto">
       <div className="carousal flex items-center  py-6 px-6 overflow-hidden relative">
         <div
           className="left-arrow bg-white/5 w-fit px-5 py-3 rounded-full text-2xl cursor-pointer hover:bg-white/10 z-30 absolute "
@@ -135,17 +141,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="bottom flex  gap-6  justify-center">
+      <div className="bottom flex  gap-6  justify-center overflow-hidden container mx-auto">
         {SliderArray.map((item, i) => (
           <div
             onClick={() => setItemIndex(i)}
             key={i}
-            className={`button cursor-pointer flex items-center border-t-2  hover:border-t-amber-400  w-fit p-7 py-10 gap-6 flex-1 ${
-              i === itemIndex ? "border-t-amber-400" : "border-t-white"
-            } `}
+            className={`button cursor-pointer flex items-center md:border-t-2  hover:md:border-t-amber-400  w-fit md:p-7 md:py-10 gap-6 flex-1 ${
+              i === itemIndex
+                ? "md:border-t-amber-400 bg-yellow md:bg-transparent"
+                : "md:border-t-white"
+            } w-2 h-2 border-yellow border-2 rounded-full md:rounded-none md:border-t-2  md:border-0  `}
           >
-            <div className="number underline text-2xl font-thin">{item.id}</div>
-            <div className="service text-2xl font-thin">{item?.dotThree}</div>
+            <div className="number underline text-2xl font-thin hidden md:block">
+              {item.id}
+            </div>
+            <div className="service text-2xl font-thin hidden md:block">
+              {item?.dotThree}
+            </div>
           </div>
         ))}
       </div>
