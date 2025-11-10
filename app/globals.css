@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --yellow: #ffed47;
+  --darkblue: #0c1c36;
+  --darkcyan: #0098a3;
 }
 
 @theme inline {
@@ -10,6 +13,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-manrope: var(--font-manrope);
+  --color-yellow: var(--yellow);
+  --color-blue: var(--darkblue);
+  --color-cyan: var(--darkcyan);
 }
 
 @media (prefers-color-scheme: dark) {
